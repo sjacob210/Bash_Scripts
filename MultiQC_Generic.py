@@ -3,6 +3,9 @@
 """
     @Author Samson Jacob 09.26.2018
     Purpose: Generified Script to produce categorical and Numerical Output from MultiQC aggregated file
+    
+    NOTE: must allow X11 forwarding to run on SGE (tkinter dependency)
+    
 """
 import pandas as pd
 import numpy as np
@@ -53,7 +56,7 @@ if __name__ == '__main__':
 
     #output directory
     outputname=correct_pth(sys.argv[1])
-    print(outputname)
+    #create directory
     create_folder(outputname)
 
     # total _seqs
@@ -69,11 +72,12 @@ if __name__ == '__main__':
     plt.tick_params(axis='x', which='both', bottom=False, top=True, labelbottom=False)
     p_ax.set_xlim(-5, 270)
 
-    # add a line at 20/10 million
+    
     # TODO show the names of the samples that fall below 10 million
     # TODO organize the samples by plate name or sort of some kind
 
-    plt.hlines(y=ten_mil, xmin=-5, xmax=270, color='green')
+    # plot the total RNA sequences and flag different levels
+    plt.hlines(y=ten_mil, xmin=-5, xmax=270, color='green') # add a line at 10 million
     plt.text(270, ten_mil, '10 Million Sequences %s' % (ten_mil), ha='left', color='green')
     plt.hlines(y=twe_mil, xmin=-5, xmax=270)
     plt.text(270, twe_mil, '20 Million Sequences %s' % (twe_mil), ha='left')
