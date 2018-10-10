@@ -10,7 +10,7 @@ module load python/cpu/2.7.15
 
 python $1/Find_MultiQC_and_Agg.py $1/Manifests/
 
-srun --partition=cpu_short /gpfs/data/proteomics/projects/TRASANDE_LAB/Meta_Data_Information/FASTQC/MERGEDFASTQS_2/Change_Auth.sh $1
+srun --partition=cpu_short $1/Scripts/Change_Auth.sh $1
 
 wait
 
@@ -19,5 +19,5 @@ python $1/MultiQC_generic.py $1/Manifests/MULTIQC_AGGREGATED_RESULTS.csv
 
 wait
 
-sbatch --partition=cpu_medium --mem=100GB /gpfs/data/proteomics/projects/TRASANDE_LAB/Meta_Data_Information/FASTQC/MERGEDFASTQS_2/Change_Auth.sh $1
+sbatch --partition=cpu_medium --mem=100GB $1/Scripts/Change_Auth.sh $1
 
