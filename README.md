@@ -1,1 +1,2 @@
-# Bash_Scripts
+# Fastqc--MultiQC pipeline
+
