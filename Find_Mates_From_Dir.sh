@@ -7,7 +7,7 @@
 #SBATCH --job-name=Create_Manifest_R2
 
 #create new plate path
-outloc=/gpfs/data/proteomics/projects/TRASANDE_LAB/Meta_Data_Information/FASTQC/MERGEDFASTQS_2/Manifests/$2
+outloc=$1/Manifests/$2
 
 
 
