@@ -8,8 +8,6 @@
 import os
 import re
 
-#test directory
-test="/gpfs/scratch/sj1879/REDUX/Manifests/" # sys.argv1
 
 def flat_lol(lol):
     return [val for subl in lol for val in subl]
