@@ -4,7 +4,7 @@
     @Author Samson Jacob 09.26.2018
     Purpose: Generified Script to produce categorical and Numerical Output from MultiQC aggregated file
     
-    NOTE: must allow X11 forwarding to run on SGE (tkinter dependency)
+    NOTE: must allow X11 forwarding to run on SLURM (tkinter dependency)
     
 """
 import pandas as pd
